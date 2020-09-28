@@ -41,32 +41,59 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
+
+//hero image
 let hero = document.getElementById("cta-img");
 hero.setAttribute('src', siteContent["cta"]["img-src"]);
 
+
+//main body image
 let bodyImg = document.getElementById("middle-img");
 bodyImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
+
+//title
 const title = document.querySelector('h1');
 title.innerHTML = "dom <br />";
 title.innerHTML += "is <br />";
 title.innerHTML += "awesome";
 
+
+//button
 const button = document.querySelector("button");
 button.textContent = siteContent.cta.button;
 
+
+//footer
 const foot = document.querySelector("footer");
 foot.textContent = siteContent.footer.copyright;
+
+
+//nav
+const newLink = document.createElement('a');
+newLink.textContent = "Blog";
+newLink.href = '#';
+
+const newLink2 = document.createElement('a');
+newLink2.textContent = "Team";
+newLink2.href = '#';
+
+document.querySelector('nav').appendChild(newLink)
+document.querySelector('nav').appendChild(newLink2)
+
+const links = document.querySelectorAll('nav a');
+
+for (let i = 0; i < links.length; i++) {
+  links[i].textContent = siteContent.nav["nav-item-1"]
+  links[i].style.color = 'green'
+}
 
 // const links = document.querySelector("a");
 // links.textContent = siteContent.nav["nav-item-1"];
 
-const links = document.querySelectorAll('a');
 
-for (let i = 0; i < links.length; i++) {
-  links[i].textContent = siteContent.nav["nav-item-1"]
-}
 
+// Top content
 const info = document.querySelector(".contact h4");
 info.textContent = siteContent.contact["contact-h4"]
 
@@ -80,7 +107,7 @@ const mail = document.querySelector(".contact p:nth-of-type(3)");
 mail.textContent = siteContent.contact["email"]
 
 
-
+// Bottom content
 const featTitle = document.querySelector(".top-content .text-content:nth-of-type(1) h4");
 featTitle.textContent = siteContent["main-content"]["features-h4"]
 
@@ -111,18 +138,3 @@ visionTitle.textContent = siteContent["main-content"]["vision-h4"];
 
 const visionContent = document.querySelector(".bottom-content .text-content:nth-of-type(3) p");
 visionContent.textContent = siteContent["main-content"]["vision-content"];
-
-
-// const feats = document.querySelector(".top-content:nth-of-type(1)");
-
-// const featTitle = feats.querySelector("h4");
-// featTitle.textContent = siteContent["main-content"]["features-h4"]
-
-// const featContent = feats.querySelector("p");
-// featContent.textContent = siteContent["main-content"]["features-content"]
-
-
-// const abouts = document.querySelector(".top-content:nth-of-type(2)");
-
-// const aboutTitle = abouts.querySelector("h4");
-// aboutTitle.textContent = siteContent["main-content"]["about-h4"]
