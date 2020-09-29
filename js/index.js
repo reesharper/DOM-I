@@ -73,27 +73,25 @@ foot.textContent = siteContent.footer.copyright;
 const newLink = document.createElement('a');
 newLink.textContent = "Blog";
 newLink.href = '#';
+newLink.style.color = 'green'
 
 const newLink2 = document.createElement('a');
 newLink2.textContent = "Team";
 newLink2.href = '#';
-
-document.querySelector('nav').appendChild(newLink)
-document.querySelector('nav').appendChild(newLink2)
+newLink2.style.color = 'green'
 
 const links = document.querySelectorAll('nav a');
 
 for (let i = 0; i < links.length; i++) {
-  links[i].textContent = siteContent.nav["nav-item-1"]
+  links[i].textContent = siteContent.nav[`nav-item-${i+1}`];
   links[i].style.color = 'green'
 }
-
-// const links = document.querySelector("a");
-// links.textContent = siteContent.nav["nav-item-1"];
-
+document.querySelector('nav').appendChild(newLink);
+document.querySelector('nav').appendChild(newLink2);
 
 
-// Top content
+
+// Contact info
 const info = document.querySelector(".contact h4");
 info.textContent = siteContent.contact["contact-h4"]
 
@@ -107,7 +105,7 @@ const mail = document.querySelector(".contact p:nth-of-type(3)");
 mail.textContent = siteContent.contact["email"]
 
 
-// Bottom content
+// Top content
 const featTitle = document.querySelector(".top-content .text-content:nth-of-type(1) h4");
 featTitle.textContent = siteContent["main-content"]["features-h4"]
 
@@ -121,6 +119,7 @@ const aboutContent = document.querySelector(".top-content .text-content:nth-of-t
 aboutContent.textContent = siteContent["main-content"]["about-content"];
 
 
+// Bottom content
 const servicesTitle = document.querySelector(".bottom-content .text-content:nth-of-type(1) h4");
 servicesTitle.textContent = siteContent["main-content"]["services-h4"];
 
